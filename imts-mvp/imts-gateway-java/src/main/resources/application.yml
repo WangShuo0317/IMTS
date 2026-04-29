@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: imts-gateway-reactive
+  
+  r2dbc:
+    url: r2dbcs:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:imts_db}?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8mb4
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:admin123456}
+    pool:
+      initial-size: 5
+      max-size: 20
+  
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  
+  codec:
+    max-in-memory-size: 500MB
+
+server:
+  port: 8080
+
+imts:
+  redis:
+    queue-name: imts_task_queue
+    pub-sub-channel: job_events
+  storage:
+    local-path: ${STORAGE_PATH:D:/IMTS/imts-mvp/datasets}
+  minio:
+    endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+    access-key: ${MINIO_ACCESS_KEY:minioadmin}
+    secret-key: ${MINIO_SECRET_KEY:minioadmin123}
+    bucket-datasets: ${MINIO_BUCKET_DATASETS:imts-datasets}
+    bucket-optimized: ${MINIO_BUCKET_OPTIMIZED:optimized-datasets}
+  jwt:
+    secret: ${JWT_SECRET:imts-jwt-secret-key-very-long-for-security}
+    expiration: 86400000
+  worker:
+    # Path to the worker's .env file (relative to gateway or absolute path)
+    env-file-path: ${WORKER_ENV_PATH:/app/imts-worker-python/.env}

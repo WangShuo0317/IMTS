@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime-generated data files
+synthetic_*.csv
+synthetic_*.json
+*_augmented_*.csv
+*_augmented_*.json
+*_reverse_translated.csv
+*_reverse_translated.json
+*_edge_cases.csv
+*_edge_cases.json
+*_cot.csv
+*_cot.json
+*_deduplicated.csv
+*_deduplicated.json
+*_semantic_dedup.csv
+*_semantic_dedup.json
+*_fully_dedup.csv
+*_fully_dedup.json
+*_cleaned.csv
+*_cleaned.json
+*_validated.csv
+*_validated.json
+*_normalized.csv
+*_normalized.json
+*_categorized.csv
+*_categorized.json
+*_alpaca.json
+adversarial_*.csv
+
+# Temp directories
+temp_datasets/
+
+# Secrets
+.env
+
+# Test scripts (not part of production)
+test_*.py
+e2e_test.py
+
+# Logs
+*.log

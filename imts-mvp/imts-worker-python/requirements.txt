@@ -1,0 +1,23 @@
+fastapi
+uvicorn[standard]
+langgraph
+redis[asyncio]
+aiomysql
+sqlalchemy[asyncio]
+python-dotenv
+pydantic
+aioredis
+minio
+paramiko
+
+# AutoGen evaluation dependencies
+autogen-agentchat>=0.2.0
+faiss-cpu>=1.7.0
+langchain-faiss>=0.1.0
+transformers>=4.36.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+
+# Data optimization agent
+openai>=1.0.0
+langchain-openai>=0.3.0

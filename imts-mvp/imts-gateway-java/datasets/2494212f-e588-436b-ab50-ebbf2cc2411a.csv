@@ -1,0 +1,4 @@
+id,text,label
+1,Hello world,positive
+2,Good morning,positive
+3,Bad day,negative
